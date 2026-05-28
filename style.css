@@ -77,3 +77,66 @@ body {
     width: 400px;
     height: auto;
 }
+
+
+
+.arcadia-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background-color: #000;
+}
+
+.full-screen-img, 
+.full-screen-outline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.full-screen-outline {
+    opacity: 0;
+    z-index: 2;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.sign-hotspot {
+    position: absolute;
+    bottom: 24%; 
+    right: 12%;  
+    width: 40%;  
+    height: 50%; 
+    z-index: 10; 
+    cursor: pointer;
+}
+
+.sign-hotspot:hover + .full-screen-outline {
+    opacity: 1;
+}
+
+.arcadia-info {
+    position: relative;
+    z-index: 4;
+    padding-left: 10%;
+}
+
+.arcadia-info h2 {
+    font-size: 3.5rem;
+    color: #fff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.arcadia-info p {
+    font-size: 1.4rem;
+    color: #fff;
+    line-height: 1.2;
+}
