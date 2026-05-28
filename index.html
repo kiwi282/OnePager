@@ -1,151 +1,37 @@
-<html>
-  <head>
+<!DOCTYPE html>
+<html lang="de">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Butterfly Effect</title>
+    <title>The Butterfly Effect - WIP</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<nav class="main-nav">
-    <div class="nav-logo">🌀</div>
-    <ul>
-        <li><a href="#hero">Start</a></li>
-        <li><a href="#echoes">Echoes</a></li>
-        <li><a href="#gallery">Captured</a></li>
-        <li><a href="#choice">The Weight</a></li>
-        <li><a href="#social">Feed</a></li>
-    </ul>
-</nav>
+
+    <nav class="main-nav">
+        <div class="logo">
+            <img src="images/spiralmenu.png" alt="spiral menu">
+        </div>
+        <ul>
+            <li><a href="#hero">Start</a></li>
+            <li><a href="#echoes">Story</a></li>
+            <li><a href="#gallery">Photos</a></li>
+            <li><a href="#choice">Choice</a></li>
+            <li><a href="#social">Contact</a></li>
+        </ul>
+    </nav>
+
     <header id="hero" class="hero-section">
-    <div class="hero-inner">
-        <h1>A single flutter.</h1>
-        <p>A million ripples.</p>
-
-        <div class="butterfly-container" onclick="flyAway()">
-            <img src="butterfly.png" alt="blue butterfly" class="butterfly-img">
-        </div>
-    </div>
-</header>
-<section id="echoes" class="content-section">
-    <div class="content-wrapper">
-        
-        <h2>Echoes</h2>
-
-        <div class="text-and-image">
-            <div class="description">
-                <p>Time isn't a line—it’s a spiral.</p>
-                <p>We think we're moving forward, but every choice we make stays in the water forever.</p>
-            </div>
-
-            <div class="sign-box">
-                <img src="arcadia-sign.jpg" alt="Arcadia Bay Willkommensschild" class="sign-img">
-                
-                <span class="inspect-label">ⓘ Inspect</span>
+        <div class="hero-text">
+            <h1>Placeholder</h1>
+            <p>Placeholder</p>
+            
+            <div class="butterfly-box" onclick="flyAway()">
+                <img src="images/butterfly.png" alt="blue butterfly" class="butterfly-img">
             </div>
         </div>
+    </header>
 
-    </div>
-</section>
-<section id="gallery" class="content-section">
-    <div class="gallery-intro">
-        <h2>Captured</h2>
-        <p>Photos are just ghosts. Moments frozen in time while the rest of the world moves on without them.</p>
-    </div>
-
-    <div class="polaroid-grid">
-        
-        <div class="polaroid" onclick="playClip(1)">
-            <img src="photo1.jpg" alt="Erinnerung 1">
-            <span class="caption">held pictures</span>
-        </div>
-
-        <div class="polaroid" onclick="playClip(2)">
-            <img src="photo2.jpg" alt="Erinnerung 2">
-        </div>
-
-        <div class="polaroid" onclick="playClip(3)">
-            <img src="photo3.jpg" alt="Erinnerung 3">
-        </div>
-
-        <div class="polaroid" onclick="playClip(4)">
-            <img src="photo4.jpg" alt="Erinnerung 4">
-        </div>
-
-        <div class="polaroid" onclick="playClip(5)">
-            <img src="photo5.jpg" alt="Erinnerung 5">
-        </div>
-
-    </div>
-
-    <div class="flash-overlay"></div>
-</section>
-<section id="choice" class="choice-section">
-    
-    <div class="choice-container">
-        
-        <div class="choice-path memory" onclick="handleChoice('memory')">
-            <div class="choice-content">
-                <h3>Live in the memory</h3>
-            </div>
-        </div>
-
-        <div class="center-ui">
-            <span class="mouse-icon">🖱️</span>
-        </div>
-
-        <div class="choice-path reality" onclick="handleChoice('reality')">
-            <div class="choice-content">
-                <h3>Wake up</h3>
-            </div>
-        </div>
-
-    </div>
-</section>
-<footer id="social" class="social-section">
-    
-    <div class="social-header">
-        <div class="profile-pic">
-            <img src="max-avatar.jpg" alt="Max Caulfield Profilbild">
-        </div>
-        <div class="profile-info">
-            <h2>Max Caulfield</h2>
-            <p class="stats">Friends: 81 | Subscribers: 12</p>
-        </div>
-    </div>
-
-    <div class="feed-container">
-        
-        <div class="feed-main">
-            <div class="message-box">
-                <h3>Send me a message!</h3>
-                <form action="#" method="post">
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="email address" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" placeholder="Your message..." required></textarea>
-                    </div>
-                    <button type="submit" class="post-button">Send</button>
-                </form>
-            </div>
-        </div>
-
-        <aside class="feed-sidebar">
-            <div class="sidebar-info">
-                <p>📍 Arcadia Bay, OREGON</p>
-                <p>🏫 Blackwell Academy</p>
-            </div>
-
-            <div class="status-post">
-                <p class="status-text">Golden hour forever.</p>
-            </div>
-            <div class="status-post">
-                <p class="status-text">Stay here.</p>
-            </div>
-        </aside>
-
-    </div>
-</footer>
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
