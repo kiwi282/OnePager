@@ -68,8 +68,8 @@ body {
 
 .butterfly-box {
     position: absolute; 
-    top: 32%;  
-    left: 30%;  
+    top: 33%;  
+    left: 32%;  
     cursor: pointer;
     z-index: 10;
 }
