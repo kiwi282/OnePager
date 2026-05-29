@@ -157,3 +157,79 @@ body {
     margin-bottom: 10px;
     line-height: 1.4;
 }
+
+.gallery-section {
+    height: 120vh;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-container {
+    position: relative;
+    width: 600px;
+    height: 600px;
+}
+
+.polaroid {
+    position: absolute;
+    width: 280px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.p5 {
+    top: -50px;
+    left: -40px;
+    transform: rotate(-2deg);
+    width: 220px;
+    height: auto;
+    z-index: 2;
+}
+
+.p4 {
+    top: -90px;
+    right: -188px;
+    transform: rotate(8eg);
+    width: 340px;
+    height: auto;
+    z-index: 3;
+}
+
+.p2 {
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-2deg);
+    width: 380px;
+    z-index: 5;
+}
+
+.p1 {
+    bottom: 20px;
+    left: -140px;
+    transform: rotate(3deg);
+    width: 320px;
+    height: auto;
+    z-index: 6;
+}
+
+.p3 {
+    bottom: -10px;
+    right: -150px;
+    transform: rotate(1deg);
+    width: 350px;
+    height: auto;
+    z-index: 4;
+}
+
+.p6 {
+    bottom: -150px;
+    left: 20px;
+    transform: rotate(-3deg);
+    width: 220px;
+    height: auto;
+    z-index: 1;
+}
