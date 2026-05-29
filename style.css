@@ -140,3 +140,20 @@ body {
     color: #fff;
     line-height: 1.2;
 }
+
+.story-section {
+    height: 100vh;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 10%;
+}
+
+.story-text p {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
