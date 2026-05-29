@@ -179,6 +179,7 @@ body {
     width: 280px;
     height: auto;
     transition: transform 0.3s ease;
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 1);
 }
 
 .p5 {
@@ -193,7 +194,7 @@ body {
 .p4 {
     top: -90px;
     right: -188px;
-    transform: rotate(8eg);
+    transform: rotate(3deg);
     width: 340px;
     height: auto;
     z-index: 3;
@@ -232,4 +233,15 @@ body {
     width: 220px;
     height: auto;
     z-index: 1;
+}
+
+.polaroid:hover {
+    z-index: 100;
+    cursor: pointer;
+    transform: scale(1.1) rotate(0deg);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 1);
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+.p2:hover {
+    transform: translateX(-50%) scale(1.1) rotate(0deg);
 }
