@@ -41,6 +41,8 @@ const updateCurrentIndex = () => {
 };
 
 window.addEventListener('wheel', (e) => {
+    if (window.innerWidth <= 768) return; 
+    
     if (e.target.closest('.messageOverlay')) return;
     
     e.preventDefault();
@@ -59,6 +61,7 @@ window.addEventListener('wheel', (e) => {
         isMoving = false;
     }, 800);
 }, { passive: false });
+
 
 window.addEventListener('resize', updateCurrentIndex);
 window.addEventListener('load', updateCurrentIndex);
