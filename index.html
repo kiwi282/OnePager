@@ -8,19 +8,21 @@
 </head>
 <body>
 
-    <nav class="mainNav">
-        <button class="logo" id="navToggle" aria-label="Toggle Navigation">
-            <img src="images/spiralmenu.png" alt="Spiral Logo">
-        </button>
-        <ul class="navLinks">
-            <li><a href="#hero">Start</a></li>
-            <li><a href="#arcadia">Arcadia</a></li>
-            <li><a href="#story-break">Story</a></li>
-            <li><a href="#gallery">Photos</a></li>
-            <li><a href="#game-choice">Choice</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+<nav class="mainNav">
+    <button class="logo" id="navToggle" aria-label="Toggle Navigation">
+        <img src="images/spiralmenu.png" alt="Spiral Logo">
+    </button>
+    <ul class="navLinks">
+        <li><a href="#hero">Start</a></li>
+        <li><a href="#arcadia">Arcadia</a></li>
+        <li><a href="#story-break">Story</a></li>
+        <li><a href="#gallery">Photos</a></li>
+        <li><a href="#game-choice">Choice</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><button id="themeToggle" class="themeToggle" aria-label="Toggle Dark/Light Mode">🌓</button></li>
+    </ul>
+</nav>
+
 
     <header id="hero" class="heroSection">
         <div class="heroText">
@@ -101,55 +103,6 @@
         </div>
     </section>
 
-    <script>
-        const mainNav = document.querySelector('.mainNav');
-        const navToggle = document.getElementById('navToggle');
-
-        navToggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            mainNav.classList.toggle('open');
-        });
-
-        document.addEventListener('click', (e) => {
-            if (!mainNav.contains(e.target)) {
-                mainNav.classList.remove('open');
-            }
-        });
-
-        const sections = document.querySelectorAll('.heroSection, .arcadiaSection, .storySection, .gallerySection, .choiceSection, .contactSection');
-        let currentIdx = 0;
-        let isMoving = false;
-
-        const updateCurrentIndex = () => {
-            const scrollPosition = window.scrollY;
-            const windowHeight = window.innerHeight;
-            currentIdx = Math.round(scrollPosition / windowHeight);
-        };
-
-        window.addEventListener('wheel', (e) => {
-            if (e.target.closest('.messageOverlay')) return;
-            
-            e.preventDefault();
-            if (isMoving) return;
-
-            if (e.deltaY > 0) {
-                if (currentIdx < sections.length - 1) currentIdx++;
-            } else {
-                if (currentIdx > 0) currentIdx--;
-            }
-
-            isMoving = true;
-            sections[currentIdx].scrollIntoView({ behavior: 'smooth' });
-
-            setTimeout(() => {
-                isMoving = false;
-            }, 800);
-        }, { passive: false });
-
-        window.addEventListener('resize', updateCurrentIndex);
-        window.addEventListener('load', updateCurrentIndex);
-    </script>
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

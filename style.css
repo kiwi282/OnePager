@@ -1,10 +1,36 @@
 :root {
-    --bgBlack: #000000;
-    --textWhite: #ffffff;
+    --bgPrimary: #000000;
+    --bgUiElement: #1a1a1a;
+    --textPrimary: #ffffff;
+    --textSecondary: #bbbbbb;
+    --textProtected: #ffffff; 
+    --navText: #cccccc;
     --accentBlue: #00aaff;
     --navBg: rgba(0, 0, 0, 0.85);
     --polaroidShadow: 0 0 20px 5px rgba(0, 0, 0, 1);
     --mainFont: 'Arial', sans-serif;
+    --contactFieldBg: rgba(0, 170, 255, 0.25);
+    --contactInputText: #333333;
+    --vignetteInner: transparent;
+    --vignetteMid: rgba(0, 0, 0, 0.5);
+    --vignetteOuter: rgba(0, 0, 0, 1);
+}
+
+body.lightMode {
+    --bgPrimary: #f2efe9; 
+    --bgUiElement: #ffffff;
+    --textPrimary: #2b2b2b; 
+    --textSecondary: #666666;
+    --textProtected: #ffffff; 
+    --navText: #2b2b2b; 
+    --accentBlue: #ff5500; 
+    --navBg: rgba(242, 239, 233, 0.95);
+    --polaroidShadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    --contactFieldBg: rgba(255, 85, 0, 0.1);
+    --contactInputText: #111111;
+    --vignetteInner: transparent;
+    --vignetteMid: rgba(242, 239, 233, 0.4);
+    --vignetteOuter: rgba(242, 239, 233, 1);
 }
 
 * {
@@ -16,15 +42,30 @@
 html {
     scroll-snap-type: none; 
     scroll-behavior: smooth;
-    background-color: var(--bgBlack);
+    background-color: var(--bgPrimary);
     overflow-y: scroll;
 }
 
 body {
     font-family: var(--mainFont);
-    background-color: var(--bgBlack);
-    color: var(--textWhite);
+    background-color: var(--bgPrimary);
+    color: var(--textPrimary);
     overflow-x: hidden;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.themeToggle {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    outline: none;
+    transition: transform 0.3s ease;
+    z-index: 101;
+}
+
+.themeToggle:hover {
+    transform: scale(1.15);
 }
 
 .heroSection,
@@ -83,8 +124,9 @@ body {
     opacity: 0;
     transform: translateX(-20px);
     pointer-events: none;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.4s ease;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    align-items: center;
 }
 
 .mainNav.open ul {
@@ -94,12 +136,12 @@ body {
 }
 
 .mainNav a {
-    color: #ccc;
+    color: var(--navText);
     text-decoration: none;
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    transition: 0.3s;
+    transition: color 0.3s ease;
 }
 
 .mainNav a:hover {
@@ -120,11 +162,13 @@ body {
     font-size: 3rem;
     margin-bottom: 5px;
     text-transform: uppercase;
+    color: var(--textProtected);
 }
 
 .heroText p {
     font-size: 1.2rem;
-    color: #bbb;
+    color: var(--textProtected);
+    opacity: 0.85;
 }
 
 .butterflyBox {
@@ -146,7 +190,8 @@ body {
     overflow: hidden;
     display: flex;
     align-items: center;
-    background-color: var(--bgBlack);
+    background-color: var(--bgPrimary);
+    transition: background-color 0.4s ease;
 }
 
 .fullScreenImg, 
@@ -189,40 +234,43 @@ body {
 
 .arcadiaInfo h2 {
     font-size: 3.5rem;
-    color: var(--textWhite);
     margin-bottom: 10px;
     text-transform: uppercase;
+    color: var(--textProtected);
 }
 
 .arcadiaInfo p {
     font-size: 1.4rem;
-    color: var(--textWhite);
     line-height: 1.2;
+    color: var(--textProtected);
 }
 
 .storySection {
-    background-color: var(--bgBlack);
+    background-color: var(--bgPrimary);
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 0 10%;
+    transition: background-color 0.4s ease;
 }
 
-.storyText p {
+.storyContent p {
     font-size: 1.5rem;
-    color: var(--textWhite);
+    color: var(--textPrimary);
     margin-bottom: 10px;
     line-height: 1.4;
+    transition: color 0.4s ease;
 }
 
 .gallerySection {
-    background-color: var(--bgBlack);
+    background-color: var(--bgPrimary);
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     overflow: hidden;
+    transition: background-color 0.4s ease;
 }
 
 .galleryContainer {
@@ -235,82 +283,33 @@ body {
     position: absolute;
     width: 280px;
     height: auto;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.4s ease;
     box-shadow: var(--polaroidShadow);
     animation: photoFloat 6s ease-in-out infinite alternate;
 }
-.p5 {
-    top: -50px;
-    left: -40px;
-    transform: rotate(-2deg);
-    width: 220px;
-    animation-delay: 0.5s;
-    z-index: 2;
-}
 
-.p4 {
-    top: -90px;
-    right: -188px;
-    transform: rotate(3deg);
-    width: 340px;
-    animation-delay: 1s;
-    z-index: 3;
-}
-
-.p2 {
-    top: 50px;
-    left: 50%;
-    transform: translateX(-50%) rotate(-2deg);
-    width: 380px;
-    animation-delay: 0s;
-    z-index: 5;
-}
-
-.p1 {
-    bottom: 20px;
-    left: -140px;
-    transform: rotate(3deg);
-    width: 320px;
-    animation-delay: 1.5s;
-    z-index: 6;
-}
-
-.p3 {
-    bottom: -10px;
-    right: -150px;
-    transform: rotate(1deg);
-    width: 350px;
-    animation-delay: 2s;
-    z-index: 4;
-}
-
-.p6 {
-    bottom: -150px;
-    left: 20px;
-    transform: rotate(-3deg);
-    width: 220px;
-    animation-delay: 2.5s;
-    z-index: 1;
-}
+.p5 { top: -50px; left: -40px; transform: rotate(-2deg); width: 220px; animation-delay: 0.5s; z-index: 2; }
+.p4 { top: -90px; right: -188px; transform: rotate(3deg); width: 340px; animation-delay: 1s; z-index: 3; }
+.p2 { top: 50px; left: 50%; transform: translateX(-50%) rotate(-2deg); width: 380px; animation-delay: 0s; z-index: 5; }
+.p1 { bottom: 20px; left: -140px; transform: rotate(3deg); width: 320px; animation-delay: 1.5s; z-index: 6; }
+.p3 { bottom: -10px; right: -150px; transform: rotate(1deg); width: 350px; animation-delay: 2s; z-index: 4; }
+.p6 { bottom: -150px; left: 20px; transform: rotate(-3deg); width: 220px; animation-delay: 2.5s; z-index: 1; }
 
 .polaroid:hover {
     z-index: 100;
     cursor: pointer;
     transform: scale(1.1) rotate(0deg) !important;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 1);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
     animation-play-state: paused; 
 }
+
 .p2:hover {
     transform: translateX(-50%) scale(1.1) rotate(0deg) !important;
 }
 
 @keyframes photoFloat {
-    0% {
-        margin-top: 0px;
-    }
-    100% {
-        margin-top: 8px;
-    }
+    0% { margin-top: 0px; }
+    100% { margin-top: 8px; }
 }
 
 .choiceSection {
@@ -335,7 +334,7 @@ body {
 
 .consequenceAlert p {
     font-size: 1.1rem;
-    color: var(--textWhite);
+    color: var(--textProtected);
     text-transform: uppercase;
     letter-spacing: 3px;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
@@ -343,10 +342,8 @@ body {
 
 .choiceWrapper {
     position: relative;
-    
     display: grid;
     grid-template-columns: 1fr 1fr; 
-    
     width: 100%;
     height: 100vh;
     z-index: 5;
@@ -358,9 +355,10 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(ellipse at center, transparent 30%, rgba(0, 0, 0, 0.5) 70%, rgba(0, 0, 0, 1) 100%);
+    background: radial-gradient(ellipse at center, var(--vignetteInner) 30%, var(--vignetteMid) 70%, var(--vignetteOuter) 100%);
     z-index: 2;
     pointer-events: none;
+    transition: background 0.4s ease;
 }
 
 .choiceSide {
@@ -392,7 +390,7 @@ body {
     background: none;
     border: none;
     font-size: 2.2rem;
-    color: var(--textWhite);
+    color: var(--textProtected);
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -407,18 +405,19 @@ body {
 }
 
 .choiceSide:hover .choiceLabel {
-    color: var(--textWhite);
+    color: var(--textProtected);
     transform: scale(1.05);
 }
 
 .contactSection {
     position: relative;
-    background-color: var(--bgBlack);
+    background-color: var(--bgPrimary);
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 0; 
     overflow: hidden;
+    transition: background-color 0.4s ease;
 }
 
 .contactUiContainer {
@@ -426,7 +425,8 @@ body {
     z-index: 2;
     width: 100%;
     max-width: 1440px;
-    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.7);
+    box-shadow: var(--polaroidShadow);
+    transition: box-shadow 0.4s ease;
 }
 
 .contactImage {
@@ -441,9 +441,10 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at center, transparent 50%, rgba(0, 0, 0, 0.5) 100%);
+    background: radial-gradient(circle at center, var(--vignetteInner) 50%, var(--vignetteOuter) 100%);
     z-index: 3;
     pointer-events: none;
+    transition: background 0.4s ease;
 }
 
 .contactOverlayForm {
@@ -457,11 +458,13 @@ body {
 
 .invisibleField {
     position: absolute;
-    color: #333;
+    color: var(--contactInputText);
     font-size: 1.1rem;
     padding: 8px;
     box-sizing: border-box;
     outline: none;
+    background-color: transparent;
+    border: none;
 }
 
 .invisibleField::placeholder {
@@ -532,14 +535,8 @@ body {
         font-size: 2.2rem;
     }
 
-    .galleryContainer {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-        padding: 80px 15px;
-    }
-
     .choiceWrapper {
-        flex-direction: column;
+        grid-template-columns: 1fr;
         height: auto;
     }
 
@@ -560,23 +557,6 @@ body {
     .invisibleField {
         font-size: 0.8rem;
         padding: 4px;
-    }
-}
-
-@media (max-width: 768px) {
-    .heroSection, .arcadiaSection, .storySection, .gallerySection, .choiceSection, .contactSection {
-        height: auto;
-        min-height: 100vh;
-    }
-
-    .choiceWrapper {
-        grid-template-columns: 1fr;
-        height: auto;
-    }
-
-    .choiceSide {
-        height: 50vh;
-        width: 100%;
     }
 
     .galleryContainer {
