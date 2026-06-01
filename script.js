@@ -12,6 +12,7 @@ const applySavedTheme = () => {
         document.body.classList.add('lightMode');
     }
 };
+// Lädt das gespeicherte Thema //
 applySavedTheme();
 
 navToggle.addEventListener('click', (e) => {
@@ -39,7 +40,7 @@ const updateCurrentIndex = () => {
     const windowHeight = window.innerHeight;
     currentIdx = Math.round(scrollPosition / windowHeight);
 };
-
+// Smooth scrolling mit Mausrad // 
 window.addEventListener('wheel', (e) => {
     if (window.innerWidth <= 768) return; 
     
@@ -65,6 +66,7 @@ window.addEventListener('wheel', (e) => {
 window.addEventListener('resize', updateCurrentIndex);
 window.addEventListener('load', updateCurrentIndex);
 
+// Entscheidungs Logik //
 function makeDecision(choice) {
     const sideDream = document.querySelector('.stayDream');
     const sideWake = document.querySelector('.wakeUp');
@@ -116,6 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Video Playback Logik für die Polaroid Videos //
     const polaroids = document.querySelectorAll(".polaroid");
 
     polaroids.forEach(card => {

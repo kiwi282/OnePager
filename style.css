@@ -1,3 +1,5 @@
+/* Variablen für Farben und custom Fonts*/
+
 @font-face {
     font-family: 'DuduCalligraphy';
     src: url('fonts/Dudu_Calligraphy.ttf') format('truetype');
@@ -232,6 +234,7 @@ body {
     animation: butterflyPauseLoop 4s infinite ease-in-out;
 }
 
+/* Keyframes für das "Flattern" des Schmetterlings*/
 @keyframes butterflyPauseLoop {
     0%, 12%, 24%, 36%, 100% {
         transform: rotate(53deg) scaleY(1) skewX(0deg) rotate(-53deg);
@@ -262,6 +265,7 @@ body {
     z-index: 1;
 }
 
+/* Overlay Outline von dem Schild*/
 .fullScreenOutline {
     opacity: 0;
     z-index: 2;
@@ -324,6 +328,7 @@ body {
     transition: color 0.4s ease;
 }
 
+/* CSS Grid für Polaroid Grid */
 .gallerySection {
     background-color: var(--bgPrimary);
     display: flex;
@@ -363,7 +368,7 @@ body {
     object-fit: cover;
     display: block;
 }
-
+/* Nochmals ein Overlay Outline*/
 .p2Outline {
     position: absolute;
     top: 0;
@@ -464,6 +469,7 @@ body.lightMode .polaroid {
     transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), filter 0.5s ease;
 }
 
+/* Diagonaler Split mit Hover Effekt */
 .stayDream {
     left: 0;
     width: 55%;
@@ -701,6 +707,7 @@ body.lightMode .polaroid {
     opacity: 1;
 }
 
+/* Anpassung für Mobile*/ 
 @media (max-width: 768px) {
     .storySection, .gallerySection, .contactSection {
         height: auto;
