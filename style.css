@@ -1,3 +1,12 @@
+:root {
+    --bgBlack: #000000;
+    --textWhite: #ffffff;
+    --accentBlue: #00aaff;
+    --navBg: rgba(0, 0, 0, 0.85);
+    --polaroidShadow: 0 0 20px 5px rgba(0, 0, 0, 1);
+    --mainFont: 'Arial', sans-serif;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,30 +16,30 @@
 html {
     scroll-snap-type: none; 
     scroll-behavior: smooth;
-    background-color: #000;
+    background-color: var(--bgBlack);
     overflow-y: scroll;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #000;
-    color: white;
+    font-family: var(--mainFont);
+    background-color: var(--bgBlack);
+    color: var(--textWhite);
     overflow-x: hidden;
 }
 
-.hero-section,
-.arcadia-section,
-.story-section,
-.gallery-section,
-.choice-section,
-.contact-section {
+.heroSection,
+.arcadiaSection,
+.storySection,
+.gallerySection,
+.choiceSection,
+.contactSection {
     height: 100vh;
     width: 100%;
     will-change: transform;
     transform: translateZ(0);
 }
 
-.main-nav {
+.mainNav {
     position: fixed;
     top: 25px;
     left: 25px;
@@ -58,15 +67,15 @@ body {
     display: block;
 }
 
-.main-nav.open .logo {
+.mainNav.open .logo {
     transform: rotate(180deg);
 }
 
-.main-nav ul {
+.mainNav ul {
     display: flex;
     list-style: none;
     gap: 25px;
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: var(--navBg);
     backdrop-filter: blur(5px);
     padding: 12px 25px;
     border-radius: 30px;
@@ -78,13 +87,13 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-.main-nav.open ul {
+.mainNav.open ul {
     opacity: 1;
     transform: translateX(0);
     pointer-events: auto;
 }
 
-.main-nav a {
+.mainNav a {
     color: #ccc;
     text-decoration: none;
     font-size: 1rem;
@@ -93,11 +102,11 @@ body {
     transition: 0.3s;
 }
 
-.main-nav a:hover {
-    color: #00aaff;
+.mainNav a:hover {
+    color: var(--accentBlue);
 }
 
-.hero-section {
+.heroSection {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -107,18 +116,18 @@ body {
     padding-left: 8%;
 }
 
-.hero-text h1 {
+.heroText h1 {
     font-size: 3rem;
     margin-bottom: 5px;
     text-transform: uppercase;
 }
 
-.hero-text p {
+.heroText p {
     font-size: 1.2rem;
     color: #bbb;
 }
 
-.butterfly-box {
+.butterflyBox {
     position: absolute; 
     top: 33%;  
     left: 32%;  
@@ -126,22 +135,22 @@ body {
     z-index: 10;
 }
 
-.butterfly-img {
+.butterflyImg {
     width: 400px;
     height: auto;
 }
 
-.arcadia-section {
+.arcadiaSection {
     position: relative;
     width: 100%;
     overflow: hidden;
     display: flex;
     align-items: center;
-    background-color: #000;
+    background-color: var(--bgBlack);
 }
 
-.full-screen-img, 
-.full-screen-outline {
+.fullScreenImg, 
+.fullScreenOutline {
     position: absolute;
     top: 0;
     left: 0;
@@ -151,14 +160,14 @@ body {
     z-index: 1;
 }
 
-.full-screen-outline {
+.fullScreenOutline {
     opacity: 0;
     z-index: 2;
     pointer-events: none;
     transition: opacity 0.3s ease;
 }
 
-.sign-hotspot {
+.signHotspot {
     position: absolute;
     bottom: 24%; 
     right: 12%;  
@@ -168,31 +177,31 @@ body {
     cursor: pointer;
 }
 
-.sign-hotspot:hover + .full-screen-outline {
+.signHotspot:hover + .fullScreenOutline {
     opacity: 1;
 }
 
-.arcadia-info {
+.arcadiaInfo {
     position: relative;
     z-index: 4;
     padding-left: 10%;
 }
 
-.arcadia-info h2 {
+.arcadiaInfo h2 {
     font-size: 3.5rem;
-    color: #fff;
+    color: var(--textWhite);
     margin-bottom: 10px;
     text-transform: uppercase;
 }
 
-.arcadia-info p {
+.arcadiaInfo p {
     font-size: 1.4rem;
-    color: #fff;
+    color: var(--textWhite);
     line-height: 1.2;
 }
 
-.story-section {
-    background-color: #000;
+.storySection {
+    background-color: var(--bgBlack);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -200,15 +209,15 @@ body {
     padding: 0 10%;
 }
 
-.story-text p {
+.storyText p {
     font-size: 1.5rem;
-    color: #fff;
+    color: var(--textWhite);
     margin-bottom: 10px;
     line-height: 1.4;
 }
 
-.gallery-section {
-    background-color: #000;
+.gallerySection {
+    background-color: var(--bgBlack);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -216,7 +225,7 @@ body {
     overflow: hidden;
 }
 
-.gallery-container {
+.galleryContainer {
     position: relative;
     width: 600px;
     height: 600px;
@@ -226,16 +235,16 @@ body {
     position: absolute;
     width: 280px;
     height: auto;
-    transition: transform 0.3s ease;
-    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: var(--polaroidShadow);
+    animation: photoFloat 6s ease-in-out infinite alternate;
 }
-
 .p5 {
     top: -50px;
     left: -40px;
     transform: rotate(-2deg);
     width: 220px;
-    height: auto;
+    animation-delay: 0.5s;
     z-index: 2;
 }
 
@@ -244,7 +253,7 @@ body {
     right: -188px;
     transform: rotate(3deg);
     width: 340px;
-    height: auto;
+    animation-delay: 1s;
     z-index: 3;
 }
 
@@ -253,6 +262,7 @@ body {
     left: 50%;
     transform: translateX(-50%) rotate(-2deg);
     width: 380px;
+    animation-delay: 0s;
     z-index: 5;
 }
 
@@ -261,7 +271,7 @@ body {
     left: -140px;
     transform: rotate(3deg);
     width: 320px;
-    height: auto;
+    animation-delay: 1.5s;
     z-index: 6;
 }
 
@@ -270,7 +280,7 @@ body {
     right: -150px;
     transform: rotate(1deg);
     width: 350px;
-    height: auto;
+    animation-delay: 2s;
     z-index: 4;
 }
 
@@ -279,23 +289,31 @@ body {
     left: 20px;
     transform: rotate(-3deg);
     width: 220px;
-    height: auto;
+    animation-delay: 2.5s;
     z-index: 1;
 }
 
 .polaroid:hover {
     z-index: 100;
     cursor: pointer;
-    transform: scale(1.1) rotate(0deg);
+    transform: scale(1.1) rotate(0deg) !important;
     box-shadow: 0 0 25px rgba(0, 0, 0, 1);
-    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    animation-play-state: paused; 
 }
-
 .p2:hover {
-    transform: translateX(-50%) scale(1.1) rotate(0deg);
+    transform: translateX(-50%) scale(1.1) rotate(0deg) !important;
 }
 
-.choice-section {
+@keyframes photoFloat {
+    0% {
+        margin-top: 0px;
+    }
+    100% {
+        margin-top: 8px;
+    }
+}
+
+.choiceSection {
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -307,7 +325,7 @@ body {
     box-sizing: border-box;
 }
 
-.consequence-alert {
+.consequenceAlert {
     position: absolute;
     top: 12%;
     z-index: 10;
@@ -315,23 +333,26 @@ body {
     pointer-events: none;
 }
 
-.consequence-alert p {
+.consequenceAlert p {
     font-size: 1.1rem;
-    color: #fff;
+    color: var(--textWhite);
     text-transform: uppercase;
     letter-spacing: 3px;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
 }
 
-.choice-wrapper {
+.choiceWrapper {
     position: relative;
-    display: flex;
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    
     width: 100%;
     height: 100vh;
     z-index: 5;
 }
 
-.combined-vignette {
+.combinedVignette {
     position: absolute;
     top: 0;
     left: 0;
@@ -342,7 +363,7 @@ body {
     pointer-events: none;
 }
 
-.choice-side {
+.choiceSide {
     flex: 1;
     position: relative;
     display: flex;
@@ -353,7 +374,7 @@ body {
     transition: opacity 0.5s ease, filter 0.5s ease;
 }
 
-.choice-bg {
+.choiceBg {
     position: absolute;
     top: 0;
     left: 0;
@@ -365,13 +386,13 @@ body {
     transition: transform 0.6s ease, filter 0.5s ease;
 }
 
-.choice-label {
+.choiceLabel {
     position: relative;
     z-index: 3;
     background: none;
     border: none;
     font-size: 2.2rem;
-    color: #fff;
+    color: var(--textWhite);
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -380,19 +401,19 @@ body {
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
 }
 
-.choice-side:hover .choice-bg {
+.choiceSide:hover .choiceBg {
     transform: scale(1.04);
     filter: brightness(0.9);
 }
 
-.choice-side:hover .choice-label {
-    color: #ffffff;
+.choiceSide:hover .choiceLabel {
+    color: var(--textWhite);
     transform: scale(1.05);
 }
 
-.contact-section {
+.contactSection {
     position: relative;
-    background-color: #000;
+    background-color: var(--bgBlack);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -400,7 +421,7 @@ body {
     overflow: hidden;
 }
 
-.contact-ui-container {
+.contactUiContainer {
     position: relative;
     z-index: 2;
     width: 100%;
@@ -408,13 +429,13 @@ body {
     box-shadow: 0 25px 70px rgba(0, 0, 0, 0.7);
 }
 
-.contact-image {
+.contactImage {
     display: block;
     width: 100%;
     height: auto;
 }
 
-.contact-vignette {
+.contactVignette {
     position: absolute;
     top: 0;
     left: 0;
@@ -425,7 +446,7 @@ body {
     pointer-events: none;
 }
 
-.contact-overlay-form {
+.contactOverlayForm {
     position: absolute;
     top: 0;
     left: 0;
@@ -434,7 +455,7 @@ body {
     z-index: 5;
 }
 
-.invisible-field {
+.invisibleField {
     position: absolute;
     color: #333;
     font-size: 1.1rem;
@@ -443,19 +464,19 @@ body {
     outline: none;
 }
 
-.invisible-field::placeholder {
+.invisibleField::placeholder {
     color: #666;
     opacity: 0.8;
 }
 
-.email-overlay {
+.emailOverlay {
     top: 44%;
     left: 73.5%;
     width: 21.5%;
     height: 4%;
 }
 
-.message-overlay {
+.messageOverlay {
     top: 48%;
     left: 73.5%;
     width: 21.5%;
@@ -463,7 +484,7 @@ body {
     resize: none;
 }
 
-.invisible-submit {
+.invisibleSubmit {
     position: absolute;
     cursor: pointer;
     top: 66.1%;
@@ -471,4 +492,96 @@ body {
     width: 4.8%;
     height: 3.2%;
     opacity: 0%;
+}
+
+@media (max-width: 768px) {
+    .heroSection, .arcadiaSection, .storySection, .gallerySection, .choiceSection, .contactSection {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .heroSection {
+        padding: 100px 5%;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .heroText h1 {
+        font-size: 2.2rem;
+    }
+
+    .butterflyBox {
+        position: relative;
+        top: 20px;
+        left: 0;
+        display: block;
+        text-align: center;
+    }
+
+    .butterflyImg {
+        width: 80%;
+        max-width: 280px;
+    }
+
+    .arcadiaSection {
+        flex-direction: column;
+        padding: 80px 5%;
+    }
+
+    .arcadiaInfo h2 {
+        font-size: 2.2rem;
+    }
+
+    .galleryContainer {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 80px 15px;
+    }
+
+    .choiceWrapper {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .choiceSide {
+        height: 50vh;
+        width: 100%;
+    }
+
+    .choiceLabel {
+        font-size: 1.5rem;
+    }
+
+    .contactUiContainer {
+        width: 95%;
+        margin: 80px auto;
+    }
+
+    .invisibleField {
+        font-size: 0.8rem;
+        padding: 4px;
+    }
+}
+
+@media (max-width: 768px) {
+    .heroSection, .arcadiaSection, .storySection, .gallerySection, .choiceSection, .contactSection {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .choiceWrapper {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .choiceSide {
+        height: 50vh;
+        width: 100%;
+    }
+
+    .galleryContainer {
+        width: 100%;
+        height: 500px;
+        transform: scale(0.75);
+    }
 }

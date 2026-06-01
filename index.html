@@ -8,11 +8,11 @@
 </head>
 <body>
 
-    <nav class="main-nav">
+    <nav class="mainNav">
         <button class="logo" id="navToggle" aria-label="Toggle Navigation">
             <img src="images/spiralmenu.png" alt="Spiral Logo">
         </button>
-        <ul class="nav-links">
+        <ul class="navLinks">
             <li><a href="#hero">Start</a></li>
             <li><a href="#arcadia">Arcadia</a></li>
             <li><a href="#story-break">Story</a></li>
@@ -22,40 +22,40 @@
         </ul>
     </nav>
 
-    <header id="hero" class="hero-section">
-        <div class="hero-text">
+    <header id="hero" class="heroSection">
+        <div class="heroText">
             <h1>Placeholder</h1>
             <p>Placeholder</p>
             
-            <div class="butterfly-box" onclick="flyAway()">
-                <img src="images/butterfly.png" alt="blue butterfly" class="butterfly-img">
+            <div class="butterflyBox" onclick="flyAway()">
+                <img src="images/butterfly.png" alt="blue butterfly" class="butterflyImg">
             </div>
         </div>
     </header>
     
-    <section id="arcadia" class="arcadia-section">
-        <img src="images/arcadiabay.jpg" alt="Arcadia Bay" class="full-screen-img">
+    <section id="arcadia" class="arcadiaSection">
+        <img src="images/arcadiabay.jpg" alt="Arcadia Bay" class="fullScreenImg">
         
-        <div class="sign-hotspot"></div>
+        <div class="signHotspot"></div>
         
-        <img src="images/arcadiabayoutline.png" alt="Outline" class="full-screen-outline">
+        <img src="images/arcadiabayoutline.png" alt="Outline" class="fullScreenOutline">
 
-        <div class="arcadia-info">
+        <div class="arcadiaInfo">
             <h2>Placeholder</h2>
             <p>placeholder</p>
             <p>placeholder</p>
         </div>
     </section>
 
-    <section id="story-break" class="story-section">
-        <div class="story-content">
+    <section id="story-break" class="storySection">
+        <div class="storyContent">
             <p>Placeholder</p>
             <p>Placeholder</p>
         </div>
     </section>
 
-    <section id="gallery" class="gallery-section">
-        <div class="gallery-container">
+    <section id="gallery" class="gallerySection">
+        <div class="galleryContainer">
             <img src="images/polaroid1.jpg" class="polaroid p1" alt="Chloe Price">
             <img src="images/polaroid2.jpg" class="polaroid p2" alt="Max Caulfield">
             <img src="images/polaroid3.jpg" class="polaroid p3" alt="Kate Marsh">
@@ -65,44 +65,44 @@
         </div>
     </section>
 
-    <section id="game-choice" class="choice-section">
-        <div class="consequence-alert">
+    <section id="game-choice" class="choiceSection">
+        <div class="consequenceAlert">
             <p>This action will have consequences...</p>
         </div>
 
-        <div class="choice-wrapper">
-            <div class="combined-vignette"></div>
+        <div class="choiceWrapper">
+            <div class="combinedVignette"></div>
             
-            <div class="choice-side stay-dream">
-                <img src="images/dream.png" alt="Live in the memory" class="choice-bg">
-                <div class="choice-overlay"></div>
-                <button class="choice-label">Live in the memory</button>
+            <div class="choiceSide stayDream">
+                <img src="images/dream.png" alt="Live in the memory" class="choiceBg">
+                <div class="choiceOverlay"></div>
+                <button class="choiceLabel">Live in the memory</button>
             </div>
             
-            <div class="choice-side wake-up">
-                <img src="images/wakeup.png" alt="Wake Up" class="choice-bg">
-                <div class="choice-overlay"></div>
-                <button class="choice-label">Wake up</button>
+            <div class="choiceSide wakeUp">
+                <img src="images/wakeup.png" alt="Wake Up" class="choiceBg">
+                <div class="choiceOverlay"></div>
+                <button class="choiceLabel">Wake up</button>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact-section">
-        <div class="contact-ui-container">
-            <img src="images/contactreg.png" alt="Contact Background" class="contact-image">
+    <section id="contact" class="contactSection">
+        <div class="contactUiContainer">
+            <img src="images/contactreg.png" alt="Contact Background" class="contactImage">
             
-            <div class="contact-vignette"></div>
+            <div class="contactVignette"></div>
             
-            <form class="contact-overlay-form">
-                <input type="email" class="invisible-field email-overlay" placeholder="email address" required>
-                <textarea class="invisible-field message-overlay" placeholder="your message" required></textarea>
-                <button type="submit" class="invisible-submit"></button>
+            <form class="contactOverlayForm">
+                <input type="email" class="invisibleField emailOverlay" placeholder="email address" required>
+                <textarea class="invisibleField messageOverlay" placeholder="your message" required></textarea>
+                <button type="submit" class="invisibleSubmit"></button>
             </form>
         </div>
     </section>
 
     <script>
-        const mainNav = document.querySelector('.main-nav');
+        const mainNav = document.querySelector('.mainNav');
         const navToggle = document.getElementById('navToggle');
 
         navToggle.addEventListener('click', (e) => {
@@ -116,7 +116,7 @@
             }
         });
 
-        const sections = document.querySelectorAll('.hero-section, .arcadia-section, .story-section, .gallery-section, .choice-section, .contact-section');
+        const sections = document.querySelectorAll('.heroSection, .arcadiaSection, .storySection, .gallerySection, .choiceSection, .contactSection');
         let currentIdx = 0;
         let isMoving = false;
 
@@ -127,7 +127,7 @@
         };
 
         window.addEventListener('wheel', (e) => {
-            if (e.target.closest('.message-overlay')) return;
+            if (e.target.closest('.messageOverlay')) return;
             
             e.preventDefault();
             if (isMoving) return;
