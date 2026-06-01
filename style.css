@@ -19,7 +19,7 @@ font-family: 'Whatnot';
     --textSecondary: #bbbbbb;
     --textProtected: #ffffff; 
     --navText: #cccccc;
-    --accentBlue: #00aaff;
+    --accentBlue: #ffffff;
     --navBg: rgba(0, 0, 0, 0.85);
     --polaroidShadow: 0 0 20px 5px rgba(0, 0, 0, 1);
     --contactFieldBg: rgba(0, 170, 255, 0.25);
@@ -600,4 +600,39 @@ body {
         height: 500px;
         transform: scale(0.75);
     }
+}
+.consequenceDivider {
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, var(--bgPrimary), #0a0a0a, var(--bgPrimary));
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.consequenceDivider p {
+    font-family: var(--journalFont);
+    font-size: 1.6rem;
+    color: var(--accentBlue);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+
+
+.choiceSide.faded {
+    opacity: 0.2;
+    filter: grayscale(100%) blur(2px);
+    pointer-events: none;
+}
+
+.choiceSide.selected .choiceBg {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+.choiceSide.selected .choiceLabel {
+    color: var(--accentBlue);
+    text-shadow: 0 0 15px var(--accentBlue);
 }

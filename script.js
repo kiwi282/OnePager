@@ -62,4 +62,23 @@ window.addEventListener('wheel', (e) => {
 
 window.addEventListener('resize', updateCurrentIndex);
 window.addEventListener('load', updateCurrentIndex);
-document.addEventListener('DOMContentLoaded', applySavedTheme);
+document.addEventListener('DOMContentLoaded', () => {
+    const choiceSides = document.querySelectorAll('.choiceSide');
+
+    if (choiceSides.length > 0) {
+        choiceSides.forEach(side => {
+            side.addEventListener('click', () => {
+                choiceSides.forEach(s => s.classList.remove('selected', 'faded'));
+                
+                side.classList.add('selected');
+                choiceSides.forEach(s => {
+                    if (s !== side) {
+                        s.classList.add('faded');
+                    }
+                });
+                
+                console.log("Choice registered. Consequences ahead.");
+            });
+        });
+    }
+});
