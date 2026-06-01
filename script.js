@@ -6,6 +6,14 @@ const sections = document.querySelectorAll('.heroSection, .arcadiaSection, .stor
 let currentIdx = 0;
 let isMoving = false;
 
+const applySavedTheme = () => {
+    const savedTheme = localStorage.getItem('userTheme');
+    if (savedTheme === 'light') {
+        document.body.classList.add('lightMode');
+    }
+};
+applySavedTheme();
+
 navToggle.addEventListener('click', (e) => {
     e.stopPropagation();
     mainNav.classList.toggle('open');
@@ -17,16 +25,8 @@ document.addEventListener('click', (e) => {
     }
 });
 
-const applySavedTheme = () => {
-    const savedTheme = localStorage.getItem('userTheme');
-    if (savedTheme === 'light') {
-        document.body.classList.add('lightMode');
-    }
-};
-
 themeToggle.addEventListener('click', () => {
     document.body.classList.toggle('lightMode');
-    
     if (document.body.classList.contains('lightMode')) {
         localStorage.setItem('userTheme', 'light');
     } else {
@@ -62,42 +62,92 @@ window.addEventListener('wheel', (e) => {
     }, 800);
 }, { passive: false });
 
-
 window.addEventListener('resize', updateCurrentIndex);
 window.addEventListener('load', updateCurrentIndex);
 
-document.addEventListener('DOMContentLoaded', () => {
-    
-    const choiceSides = document.querySelectorAll('.choiceSide');
-    if (choiceSides.length > 0) {
-        choiceSides.forEach(side => {
-            side.addEventListener('click', () => {
-                choiceSides.forEach(s => s.classList.remove('selected', 'faded'));
-                
-                side.classList.add('selected');
-                choiceSides.forEach(s => {
-                    if (s !== side) {
-                        s.classList.add('faded');
-                    }
-                });
-                console.log("Choice registered. Consequences ahead.");
-            });
-        });
+function makeDecision(choice) {
+    const sideDream = document.querySelector('.stayDream');
+    const sideWake = document.querySelector('.wakeUp');
+    const alertBanner = document.querySelector('.consequenceAlert');
+
+    if (choice === 'dream') {
+        sideDream.classList.add('selected');
+        sideDream.classList.remove('faded');
+        sideWake.classList.add('faded');
+        sideWake.classList.remove('selected');
+        document.body.style.setProperty('--accentBlue', '#fffbd5ff');
+    } else if (choice === 'wakeup') {
+        sideWake.classList.add('selected');
+        sideWake.classList.remove('faded');
+        sideDream.classList.add('faded');
+        sideDream.classList.remove('selected');
+        document.body.style.setProperty('--accentBlue', '#7c2520ff');
     }
 
+    if (alertBanner) {
+        alertBanner.style.opacity = '1';
+        setTimeout(() => {
+            alertBanner.style.opacity = '0';
+        }, 3000);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
     const hotspot = document.getElementById('signHotspot');
     const subtitle = document.getElementById('inspectSubtitle');
+    const subtitleText = subtitle ? subtitle.querySelector('p') : null;
     let subtitleTimeout;
 
-    if (hotspot && subtitle) {
+    const originalSignText = subtitleText ? subtitleText.innerText : "";
+
+    const showSubtitle = (text) => {
+        if (!subtitle || !subtitleText) return;
+        clearTimeout(subtitleTimeout);
+        subtitleText.innerText = text;
+        subtitle.classList.add('open');
+        subtitleTimeout = setTimeout(() => {
+            subtitle.classList.remove('open');
+        }, 4000);
+    };
+
+    if (hotspot) {
         hotspot.addEventListener('click', () => {
-            clearTimeout(subtitleTimeout);
-            
-            subtitle.classList.add('open');
-            
-            subtitleTimeout = setTimeout(() => {
-                subtitle.classList.remove('open');
-            }, 4000);
+            showSubtitle(originalSignText);
         });
     }
-}); 
+
+    const polaroids = document.querySelectorAll(".polaroid");
+
+    polaroids.forEach(card => {
+        card.addEventListener("click", function() {
+            
+            if (this.classList.contains('p2')) {
+                showSubtitle("Oh... I should try clicking on the other pictures.");
+            }
+
+            const currentVideo = this.querySelector("video");
+
+            if (!currentVideo) return;
+
+            if (!currentVideo.paused) {
+                currentVideo.pause();
+                const originalSrc = currentVideo.querySelector("source").src;
+                currentVideo.src = "";
+                currentVideo.load();
+                currentVideo.src = originalSrc;
+            } else {
+                document.querySelectorAll(".polaroid video").forEach(otherVideo => {
+                    if (!otherVideo.paused && otherVideo !== currentVideo) {
+                        otherVideo.pause();
+                        const otherSrc = otherVideo.querySelector("source").src;
+                        otherVideo.src = "";
+                        otherVideo.load();
+                        otherVideo.src = otherSrc;
+                    }
+                });
+                
+                currentVideo.play().catch(err => console.log("Playback interrupted:", err));
+            }
+        });
+    });
+});

@@ -32,12 +32,12 @@
     </div>
 
     <div class="heroText">
-        <h1>Placeholder</h1>
-        <p>Placeholder</p>
+        <h1>Butterfly Effect</h1>
+        <p>The concept is simple: a single, random event can completely rewrite how a life turns out. One minor choice triggers a chain reaction, altering the future in ways that are impossible to predict at the time.</p>
     </div>
 </header>
     
-    <section id="arcadia" class="arcadiaSection">
+<section id="arcadia" class="arcadiaSection">
     <img src="images/arcadiabay.jpg" class="fullScreenImg" alt="Arcadia Bay">
     
     <div class="signHotspot" id="signHotspot"></div>
@@ -45,72 +45,101 @@
     <img src="images/arcadiabayoutline.png" class="fullScreenOutline" alt="Sign Outline">
 
     <div class="arcadiaInfo">
-        <h2>Placeholder</h2>
-        <p>Placeholder</p>
+        <h2>Arcadia Bay</h2>
+        <p>In a quiet environment like this, every action causes a drastic shift. Decisions that seem completely minor in the moment end up triggering massive consequences later on.</p>
     </div>
 
     <div class="inspectSubtitle" id="inspectSubtitle">
-        <p>"Placeholder"</p>
+        <p>"The welcome sign is old and peeling. It is a quiet setting for a place where everything is shifting under the surface."</p>
     </div>
 </section>
 
-    <section id="story-break" class="storySection">
-        <div class="storyContent">
-            <p>Placeholder</p>
-            <p>Placeholder</p>
-        </div>
-    </section>
+<section id="story-break" class="storySection">
+    <div class="storyContent">
+        <p>A major shift usually impacts personal relationships first. A single choice can permanently alter a friendship or break a connection with someone, leaving no way to go back and fix the damage.</p>
+        <p>When a timeline changes, the hardest part is dealing with the fallout. Eventually, there is no choice left but to accept the new reality, even when the final outcome isn't what anyone wanted.</p>
+    </div>
+</section>
 
-    <section id="gallery" class="gallerySection">
-        <div class="galleryContainer">
-            <img src="images/polaroid1.jpg" class="polaroid p1" alt="Chloe Price">
-            <img src="images/polaroid2.jpg" class="polaroid p2" alt="Max Caulfield">
-            <img src="images/polaroid3.jpg" class="polaroid p3" alt="Kate Marsh">
-            <img src="images/polaroid4.jpg" class="polaroid p4" alt="Max and Warren">
-            <img src="images/polaroid5.jpg" class="polaroid p5" alt="Stranded Whale">
-            <img src="images/polaroid6.jpg" class="polaroid p6" alt="Diner">
-        </div>
-    </section>
-
-    <section id="game-choice" class="choiceSection">
-        <div class="consequenceAlert">
-            <p>This action will have consequences...</p>
-        </div>
-
-        <div class="choiceWrapper">
-            <div class="combinedVignette"></div>
-            
-            <div class="choiceSide stayDream">
-                <img src="images/dream.png" alt="Live in the memory" class="choiceBg">
-                <div class="choiceOverlay"></div>
-                <button class="choiceLabel">Live in the memory</button>
-            </div>
-            
-            <div class="choiceSide wakeUp">
-                <img src="images/wakeup.png" alt="Wake Up" class="choiceBg">
-                <div class="choiceOverlay"></div>
-                <button class="choiceLabel">Wake up</button>
+<section id="gallery" class="gallerySection">
+    <div class="galleryContainer">
+        
+        <div class="polaroid p1">
+            <div class="polaroidInner">
+                <video loop muted playsinline poster="images/polaroid1.png">
+                    <source src="images/chloepolaroid.mp4" type="video/mp4">
+                </video>
             </div>
         </div>
-    </section>
 
-    <div class="consequenceDivider">
-        <p>Consequences are unfolding...</p>
+<div class="polaroid p2">
+    <div class="polaroidInner">
+        <img src="images/polaroid2.png" alt="Max Caulfield">
+        <img src="images/polaroid2outline.png" class="p2Outline" alt="Outline">
+    </div>
+</div>
+        <div class="polaroid p3">
+            <div class="polaroidInner">
+                <video loop muted playsinline poster="images/polaroid3.png">
+                    <source src="images/katepolaroid.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+        <div class="polaroid p4">
+            <div class="polaroidInner">
+                <video loop muted playsinline poster="images/polaroid4.png">
+                    <source src="images/warrenpolaroid.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+        <div class="polaroid p5">
+            <div class="polaroidInner">
+                <img src="images/polaroid5.png" alt="Stranded Whale">
+            </div>
+        </div>
+
+        <div class="polaroid p6">
+            <div class="polaroidInner">
+                <img src="images/polaroid6.png" alt="Diner">
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="game-choice" class="choiceSection">
+    <div class="consequenceAlert" style="opacity: 0;">
+        <p>This action will have consequences...</p>
     </div>
 
-    <section id="contact" class="contactSection">
-        <div class="contactUiContainer">
-            <img src="images/contactreg.png" alt="Contact Background" class="contactImage">
-            
-            <div class="contactVignette"></div>
-            
-            <form class="contactOverlayForm">
-                <input type="email" class="invisibleField emailOverlay" placeholder="email address" required>
-                <textarea class="invisibleField messageOverlay" placeholder="your message" required></textarea>
-                <button type="submit" class="invisibleSubmit"></button>
-            </form>
+    <div class="choiceWrapper">
+        <div class="choiceSide stayDream" onclick="makeDecision('dream')">
+            <img src="images/dream.png" alt="Live in the memory" class="choiceBg">
+            <button class="choiceLabel">Live in the memory</button>
         </div>
-    </section>
+        
+        <div class="choiceSide wakeUp" onclick="makeDecision('wakeup')">
+            <img src="images/wakeup.png" alt="Wake Up" class="choiceBg">
+            <button class="choiceLabel">Wake up</button>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="contactSection">
+    <div class="contactUiContainer">
+        <img src="images/contactregdesktop.png" alt="Contact Background" class="contactImage">
+        
+        <div class="contactVignette"></div>
+        
+        <form class="contactOverlayForm">
+            <input type="email" class="invisibleField emailOverlay" placeholder="email address" required>
+            <textarea class="invisibleField messageOverlay" placeholder="your message" required></textarea>
+            <button type="submit" class="invisibleSubmit"></button>
+        </form>
+    </div>
+</section>
 
 <script src="script.js"></script>
 </body>
