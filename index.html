@@ -9,15 +9,16 @@
 <body>
 
     <nav class="main-nav">
-        <div class="logo">
-            <img src="images/spiralmenu.png" alt="spiral menu">
-        </div>
-        <ul>
+        <button class="logo" id="navToggle" aria-label="Toggle Navigation">
+            <img src="images/spiralmenu.png" alt="Spiral Logo">
+        </button>
+        <ul class="nav-links">
             <li><a href="#hero">Start</a></li>
-            <li><a href="#echoes">Story</a></li>
+            <li><a href="#arcadia">Arcadia</a></li>
+            <li><a href="#story-break">Story</a></li>
             <li><a href="#gallery">Photos</a></li>
-            <li><a href="#choice">Choice</a></li>
-            <li><a href="#social">Contact</a></li>
+            <li><a href="#game-choice">Choice</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
@@ -32,75 +33,123 @@
         </div>
     </header>
     
-<section id="arcadia" class="arcadia-section">
-    <img src="images/arcadiabay.jpg" alt="Arcadia Bay" class="full-screen-img">
-    
-    <div class="sign-hotspot"></div>
-    
-    <img src="images/arcadiabayoutline.png" alt="Outline" class="full-screen-outline">
-
-    <div class="arcadia-info">
-        <h2>Placeholder</h2>
-        <p>placeholder</p>
-        <p>placeholder</p>
-    </div>
-</section>
-
-<section id="story-break" class="story-section">
-    <div class="story-content" >
-        <p>Placeholder</p>
-        <p>Placeholder</p>
-    </div>
-</section>
-
-<section id="gallery" class="gallery-section">
-    <div class="gallery-container">
-        <img src="images/polaroid1.jpg" class="polaroid p1" alt="Chloe Price">
-        <img src="images/polaroid2.jpg" class="polaroid p2" alt="Max Caulfield">
-        <img src="images/polaroid3.jpg" class="polaroid p3" alt="Kate Marsh">
-        <img src="images/polaroid4.jpg" class="polaroid p4" alt="Max and Warren">
-        <img src="images/polaroid5.jpg" class="polaroid p5" alt="Stranded Whale">
-        <img src="images/polaroid6.jpg" class="polaroid p6" alt="Diner">
-    </div>
-</section>
-
-<section id="game-choice" class="choice-section">
-
-    <div class="consequence-alert">
-        <p>This action will have consequences...</p>
-    </div>
-
-    <div class="choice-wrapper">
-        <div class="combined-vignette"></div>
-        <div class="choice-side stay-dream">
-            <img src="images/dream.png" alt="Live in the memory" class="choice-bg">
-            <div class="choice-overlay"></div>
-            <button class="choice-label">Live in the memory</button>
-        </div><div class="combined-vignette"></div>
+    <section id="arcadia" class="arcadia-section">
+        <img src="images/arcadiabay.jpg" alt="Arcadia Bay" class="full-screen-img">
         
-        <div class="choice-side wake-up">
-            <img src="images/wakeup.png" alt="Wake Up" class="choice-bg">
-            <div class="choice-overlay"></div>
-            <button class="choice-label">Wake up</button>
+        <div class="sign-hotspot"></div>
+        
+        <img src="images/arcadiabayoutline.png" alt="Outline" class="full-screen-outline">
+
+        <div class="arcadia-info">
+            <h2>Placeholder</h2>
+            <p>placeholder</p>
+            <p>placeholder</p>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="contact" class="contact-section">
-    <div class="contact-ui-container">
-        <img src="images/contactreg.png" alt="Contact Background" class="contact-image">
-        
-        <div class="contact-vignette"></div>
-        
-        <form class="contact-overlay-form">
-            <input type="email" class="invisible-field email-overlay" placeholder="email address" required>
-            <textarea class="invisible-field message-overlay" placeholder="your message" required></textarea>
-            <button type="submit" class="invisible-submit"></button>
-        </form>
-    </div>
-</section>
+    <section id="story-break" class="story-section">
+        <div class="story-content">
+            <p>Placeholder</p>
+            <p>Placeholder</p>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery-section">
+        <div class="gallery-container">
+            <img src="images/polaroid1.jpg" class="polaroid p1" alt="Chloe Price">
+            <img src="images/polaroid2.jpg" class="polaroid p2" alt="Max Caulfield">
+            <img src="images/polaroid3.jpg" class="polaroid p3" alt="Kate Marsh">
+            <img src="images/polaroid4.jpg" class="polaroid p4" alt="Max and Warren">
+            <img src="images/polaroid5.jpg" class="polaroid p5" alt="Stranded Whale">
+            <img src="images/polaroid6.jpg" class="polaroid p6" alt="Diner">
+        </div>
+    </section>
+
+    <section id="game-choice" class="choice-section">
+        <div class="consequence-alert">
+            <p>This action will have consequences...</p>
+        </div>
+
+        <div class="choice-wrapper">
+            <div class="combined-vignette"></div>
+            
+            <div class="choice-side stay-dream">
+                <img src="images/dream.png" alt="Live in the memory" class="choice-bg">
+                <div class="choice-overlay"></div>
+                <button class="choice-label">Live in the memory</button>
+            </div>
+            
+            <div class="choice-side wake-up">
+                <img src="images/wakeup.png" alt="Wake Up" class="choice-bg">
+                <div class="choice-overlay"></div>
+                <button class="choice-label">Wake up</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="contact-ui-container">
+            <img src="images/contactreg.png" alt="Contact Background" class="contact-image">
+            
+            <div class="contact-vignette"></div>
+            
+            <form class="contact-overlay-form">
+                <input type="email" class="invisible-field email-overlay" placeholder="email address" required>
+                <textarea class="invisible-field message-overlay" placeholder="your message" required></textarea>
+                <button type="submit" class="invisible-submit"></button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        const mainNav = document.querySelector('.main-nav');
+        const navToggle = document.getElementById('navToggle');
+
+        navToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mainNav.classList.toggle('open');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!mainNav.contains(e.target)) {
+                mainNav.classList.remove('open');
+            }
+        });
+
+        const sections = document.querySelectorAll('.hero-section, .arcadia-section, .story-section, .gallery-section, .choice-section, .contact-section');
+        let currentIdx = 0;
+        let isMoving = false;
+
+        const updateCurrentIndex = () => {
+            const scrollPosition = window.scrollY;
+            const windowHeight = window.innerHeight;
+            currentIdx = Math.round(scrollPosition / windowHeight);
+        };
+
+        window.addEventListener('wheel', (e) => {
+            if (e.target.closest('.message-overlay')) return;
+            
+            e.preventDefault();
+            if (isMoving) return;
+
+            if (e.deltaY > 0) {
+                if (currentIdx < sections.length - 1) currentIdx++;
+            } else {
+                if (currentIdx > 0) currentIdx--;
+            }
+
+            isMoving = true;
+            sections[currentIdx].scrollIntoView({ behavior: 'smooth' });
+
+            setTimeout(() => {
+                isMoving = false;
+            }, 800);
+        }, { passive: false });
+
+        window.addEventListener('resize', updateCurrentIndex);
+        window.addEventListener('load', updateCurrentIndex);
+    </script>
 
     <script src="script.js"></script>
-
 </body>
 </html>
