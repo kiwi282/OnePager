@@ -6,7 +6,7 @@
 }
 
 @font-face {
-font-family: 'Whatnot'; 
+    font-family: 'Whatnot';
     src: url('fonts/Whatnot W00 Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
@@ -17,7 +17,7 @@ font-family: 'Whatnot';
     --bgUiElement: #1a1a1a;
     --textPrimary: #ffffff;
     --textSecondary: #bbbbbb;
-    --textProtected: #ffffff; 
+    --textProtected: #ffffff;
     --navText: #cccccc;
     --accentBlue: #ffffff;
     --navBg: rgba(0, 0, 0, 0.85);
@@ -27,7 +27,6 @@ font-family: 'Whatnot';
     --vignetteInner: transparent;
     --vignetteMid: rgba(0, 0, 0, 0.5);
     --vignetteOuter: rgba(0, 0, 0, 1);
-    
 
     --headerFont: 'Whatnot', 'Courier New', monospace;
     --journalFont: 'DuduCalligraphy', sans-serif;
@@ -35,13 +34,13 @@ font-family: 'Whatnot';
 }
 
 body.lightMode {
-    --bgPrimary: #f2efe9; 
+    --bgPrimary: #f2efe9;
     --bgUiElement: #ffffff;
-    --textPrimary: #2b2b2b; 
+    --textPrimary: #2b2b2b;
     --textSecondary: #666666;
-    --textProtected: #ffffff; 
-    --navText: #2b2b2b; 
-    --accentBlue: #ff5500; 
+    --textProtected: #ffffff;
+    --navText: #2b2b2b;
+    --accentBlue: #ffffff;
     --navBg: rgba(242, 239, 233, 0.95);
     --polaroidShadow: 0 5px 15px rgba(0, 0, 0, 0.15);
     --contactFieldBg: rgba(255, 85, 0, 0.1);
@@ -58,7 +57,7 @@ body.lightMode {
 }
 
 html {
-    scroll-snap-type: none; 
+    scroll-snap-type: none;
     scroll-behavior: smooth;
     background-color: var(--bgPrimary);
     overflow-y: scroll;
@@ -119,7 +118,7 @@ body {
 }
 
 .logo img {
-    width: 50px; 
+    width: 50px;
     height: auto;
     display: block;
 }
@@ -201,10 +200,25 @@ body {
     z-index: 2;
 }
 
+.heroText h1 {
+    font-family: var(--headerFont);
+    font-size: 3rem;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    color: var(--textProtected);
+}
+
+.heroText p {
+    font-family: var(--journalFont);
+    font-size: 1.2rem;
+    color: var(--textProtected);
+    opacity: 0.85;
+}
+
 .butterflyBox {
     position: absolute;
-    top: 37%;  
-    left: 33.5%;  
+    top: 37%;
+    left: 33.5%;
     z-index: 10;
     cursor: pointer;
 }
@@ -235,7 +249,7 @@ body {
     transition: background-color 0.4s ease;
 }
 
-.fullScreenImg, 
+.fullScreenImg,
 .fullScreenOutline {
     position: absolute;
     top: 0;
@@ -255,11 +269,11 @@ body {
 
 .signHotspot {
     position: absolute;
-    bottom: 24%; 
-    right: 12%;  
-    width: 40%;  
-    height: 50%; 
-    z-index: 10; 
+    bottom: 24%;
+    right: 12%;
+    width: 40%;
+    height: 50%;
+    z-index: 10;
     cursor: pointer;
 }
 
@@ -282,7 +296,6 @@ body {
 }
 
 .arcadiaInfo p {
-    font-family: var(--journalFont);
     font-family: var(--journalFont);
     font-size: 1.4rem;
     line-height: 1.2;
@@ -344,7 +357,7 @@ body {
     cursor: pointer;
     transform: scale(1.1) rotate(0deg) !important;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
-    animation-play-state: paused; 
+    animation-play-state: paused;
 }
 
 .p2:hover {
@@ -369,7 +382,6 @@ body {
 }
 
 .consequenceAlert {
-    
     position: absolute;
     top: 12%;
     z-index: 10;
@@ -389,7 +401,7 @@ body {
 .choiceWrapper {
     position: relative;
     display: grid;
-    grid-template-columns: 1fr 1fr; 
+    grid-template-columns: 1fr 1fr;
     width: 100%;
     height: 100vh;
     z-index: 5;
@@ -437,7 +449,7 @@ body {
     background: none;
     border: none;
     font-size: 2.2rem;
-    color: var(--journalFontd);
+    color: var(--textProtected);
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -462,7 +474,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 0; 
+    margin-top: 0;
     overflow: hidden;
     transition: background-color 0.4s ease;
 }
@@ -506,7 +518,7 @@ body {
 .invisibleField {
     position: absolute;
     color: var(--contactInputText);
-    font-size: 1.1vw; 
+    font-size: 1.1vw;
     padding: 0.5vw;
     box-sizing: border-box;
     outline: none;
@@ -544,149 +556,6 @@ body {
     opacity: 0%;
 }
 
-@media (max-width: 768px) {
-    .storySection, .gallerySection, .choiceSection, .contactSection {
-        height: auto;
-        min-height: 100vh;
-        padding: 80px 20px;
-    }
-
-    .heroSection, .arcadiaSection {
-        height: 100vh;
-        width: 100%;
-        position: relative;
-        padding: 0;
-        overflow: hidden;
-    }
-
-.heroSection {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        padding-top: 12vh;
-        padding-left: 6%;
-        position: relative;
-        overflow: hidden;
-        height: 100vh;
-        width: 100%;
-    }
-
-    .heroImageContainer {
-        left: 68%;
-        transform: translate(-68%, -50%);
-    }
-
-    .heroText h1 { font-size: 2.2rem; }
-    .heroText p { font-size: 1.1rem; }
-
-    .butterflyBox {
-        top: 45%;
-        left: 50%;
-        transform: scale(0.9);
-        transform-origin: top left;
-    }
-
-    .fullScreenImg, 
-    .fullScreenOutline {
-        object-position: 83% center;
-    }
-
-    .arcadiaInfo {
-        position: absolute;
-        top: 8vh;
-        left: 50%;
-        transform: translateX(-50%);
-        padding-left: 0;
-        text-align: center;
-        width: 90%;
-        z-index: 4;
-    }
-    
-    .arcadiaInfo h2 { font-size: 2.4rem; }
-    .arcadiaInfo p { font-size: 1.2rem; }
-    
-    .signHotspot {
-        position: absolute;
-        bottom: 0%;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 85%;
-        height: 72%;
-        z-index: 10;
-    }
-    
-    .inspectSubtitle p { font-size: 1.3rem; }
-
-    .gallerySection { padding: 60px 10px; }
-    .galleryContainer {
-        width: 100%;
-        height: auto;
-        transform: none;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 15px;
-        padding: 10px;
-    }
-    .polaroid {
-        position: relative !important;
-        top: auto !important;
-        left: auto !important;
-        right: auto !important;
-        bottom: auto !important;
-        transform: none !important;
-        width: 100% !important;
-        margin: 0;
-    }
-    .p1, .p3, .p5 { transform: rotate(-2deg) !important; }
-    .p2, .p4, .p6 { transform: rotate(2deg) !important; }
-    .polaroid:hover { transform: scale(1.05) rotate(0deg) !important; }
-
-    .choiceSection { padding-top: 80px; }
-    .choiceWrapper {
-        grid-template-columns: 1fr;
-        height: auto;
-    }
-    .choiceSide {
-        height: 45vh;
-        width: 100%;
-    }
-    .choiceLabel { font-size: 1.6rem; }
-    .consequenceAlert { top: 3%; }
-
-    .contactUiContainer {
-        width: 100%;
-        max-width: 480px;
-        margin: 40px auto;
-        position: relative;
-    }
-    .invisibleField {
-        font-size: 3.2vw;
-        padding: 1.5vw;
-    }
-    .contactImage {
-        content: url('images/contactregmobile.jpg');
-    }
-    .emailOverlay {
-        top: 60.5%;
-        left: 19.5%;
-        width: 61%;
-        height: 3%;
-    }
-    .messageOverlay {
-        top: 64.5%;
-        left: 19.5%;
-        width: 61%;
-        height: 18.5%;
-    }
-    .invisibleSubmit {
-        top: 84.5%;
-        left: 19.5%;
-        width: 15%;
-        height: 3.5%;
-        opacity: 0%;
-    }
-}
-
 .consequenceDivider {
     height: 30vh;
     display: flex;
@@ -706,7 +575,6 @@ body {
     opacity: 0.6;
 }
 
-
 .choiceSide.faded {
     opacity: 0.2;
     filter: grayscale(100%) blur(2px);
@@ -722,11 +590,12 @@ body {
     color: var(--accentBlue);
     text-shadow: 0 0 15px var(--accentBlue);
 }
+
 .inspectSubtitle {
     position: fixed;
-    bottom: 8%; 
+    bottom: 8%;
     left: 50%;
-    transform: translate(-50%, 20px); 
+    transform: translate(-50%, 20px);
     z-index: 200;
     width: 80%;
     max-width: 700px;
@@ -746,10 +615,173 @@ body {
     color: #ffffff;
     font-size: 1.8rem;
     line-height: 1.4;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9), 
-                 -1px -1px 0 #000,  
-                  1px -1px 0 #000,
-                 -1px  1px 0 #000,
-                  1px  1px 0 #000;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9),
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
+@media (max-width: 768px) {
+    .storySection, .gallerySection, .choiceSection, .contactSection {
+        height: auto;
+        min-height: 100vh;
+        padding: 80px 20px;
+    }
+
+    .heroSection, .arcadiaSection {
+        height: 100vh;
+        width: 100%;
+        position: relative;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .heroSection {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 12vh;
+        padding-left: 6%;
+    }
+
+    .heroImageContainer {
+        left: 68%;
+        transform: translate(-68%, -50%);
+    }
+
+    .heroText h1 {
+        font-family: var(--headerFont);
+        font-size: 2.2rem;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        color: var(--textProtected);
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    }
+
+    .heroText p {
+        font-family: var(--journalFont);
+        font-size: 1.2rem;
+        color: var(--textProtected);
+        opacity: 0.9;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    }
+
+    .butterflyBox {
+        top: 45%;
+        left: 50%;
+        transform: scale(0.9);
+        transform-origin: top left;
+    }
+
+    .fullScreenImg,
+    .fullScreenOutline {
+        object-position: 83% center;
+    }
+
+    .arcadiaInfo {
+        position: absolute;
+        top: 8vh;
+        left: 50%;
+        transform: translateX(-50%);
+        padding-left: 0;
+        text-align: center;
+        width: 90%;
+        z-index: 4;
+    }
+
+    .arcadiaInfo h2 { font-size: 2.4rem; }
+    .arcadiaInfo p { font-size: 1.2rem; }
+
+    .signHotspot {
+        position: absolute;
+        bottom: 0%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 85%;
+        height: 72%;
+        z-index: 10;
+    }
+
+    .inspectSubtitle p { font-size: 1.3rem; }
+
+    .gallerySection { padding: 60px 10px; }
+    
+    .galleryContainer {
+        width: 100%;
+        height: auto;
+        transform: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .polaroid {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+        width: 100% !important;
+        margin: 0;
+    }
+
+    .p1, .p3, .p5 { transform: rotate(-2deg) !important; }
+    .p2, .p4, .p6 { transform: rotate(2deg) !important; }
+    .polaroid:hover { transform: scale(1.05) rotate(0deg) !important; }
+
+    .choiceSection { padding-top: 80px; }
+    
+    .choiceWrapper {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .choiceSide {
+        height: 45vh;
+        width: 100%;
+    }
+
+    .choiceLabel { font-size: 1.6rem; }
+    .consequenceAlert { top: 3%; }
+
+    .contactUiContainer {
+        width: 100%;
+        max-width: 480px;
+        margin: 40px auto;
+        position: relative;
+    }
+
+    .invisibleField {
+        font-size: 3.2vw;
+        padding: 1.5vw;
+    }
+
+    .contactImage {
+        content: url('images/contactregmobile.jpg');
+    }
+
+    .emailOverlay {
+        top: 60.5%;
+        left: 19.5%;
+        width: 61%;
+        height: 3%;
+    }
+
+    .messageOverlay {
+        top: 64.5%;
+        left: 19.5%;
+        width: 61%;
+        height: 18.5%;
+    }
+
+    .invisibleSubmit {
+        top: 84.5%;
+        left: 19.5%;
+        width: 15%;
+        height: 3.5%;
+        opacity: 0%;
+    }
+}
