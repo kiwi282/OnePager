@@ -1,19 +1,57 @@
-# OnePager
-This Project is supposed to be based of my Favourite Storygame, Life is strange (1). I didnt want to go into the story but more into the butterfly effect, that plays a big role in the game. And how even small decisions can change everything. I didnt want to make a boring onepager website, i wanted to make something cool and more  Game inspired  i guess. 
+# Project: The Butterfly Effect (Life is Strange OnePager)
 
-Hero: The Butterfly you can see, ofcourse matches the name of what its all about but is also a big part in the game, it comes at the start before one of the bigger decisions. and i thought it lookes cool so. I also added a small animation to the butterfly becuase i didnt want it to look stale. It was really hard because i had to idea how i should do it so i just watched some tutorials (like i did for everything). At first it looked like some demon bouncing around but with enough experimenting i finally made it work.
-Arcadia Bay: the story takes place in arcadia bay, so i wanted to show that. The "Design" of the outline overlay is the same as in the game and i thought it looked really cool so i wanted to add that. I just drew over the sign in adobe photoshop, added it as a overlay. Made it only visible when you hover over it and when you click yu get this short text on the bottom of the screen that fades away.
 
-Gallery: Polaroids pay a big role in the game because the mc loves taking pictures and took pictures of everything important, so i  thought it would be a perfect thing to add. I also added some videos of how the pitures got taken. I also added another overlay thing on the polaroid in the middle becuase i wanted people to know that you can press the polaroids
+---
 
-Choice screen: As i said - choices are a really big part in this. so i wanted to add one but didnt know which one would fit without having to know the story. i think it might be a bit confusing but honestly i dont care. My plan was when you click one option, the whole websites "mood" changes. but that would take way to much time and effort, which i dont have. I also wanted to make it look better becuase it looks "too modern" now but whatever. 
+## 🦋 Projektidee & Konzept
+Dieses Projekt basiert auf meinem Lieblings-Storygame **„Life is Strange (1)“**. Ich wollte dabei gar nicht zu tief in die eigentliche Story eintauchen, sondern mich eher auf den Schmetterlingseffekt konzentrieren, der im Spiel eine riesige Rolle spielt – und darauf, wie selbst kleine Entscheidungen alles verändern können. 
 
-Contact: The background is from the games social media and i just added the contact form thing, also i made a mobile version of the picture. 
+Ich wollte keinen langweiligen Standard-OnePager bauen, sondern etwas Cooles machen, das sich mehr nach dem Spiel anfühlt (Game-inspired).
 
-Navigation: I wanted to do something really simple for the navigation and i really like how it turned out, especially the idea with the spiral that turns quickly is so cute. 
-Font: The fonts i used are actually the real game fonts, i wanted to add them for the vibe of everything and because they look cute. 
+---
 
-Reflexion: Honestly at first when we got this project i had to idea what to do becuase like i knew i didnt want to make something boring and emotionless so i thought about different things to do, so i got this idea with the game and thought yk why not something inspired by it. So i started making my wireframe which turned out kinda exactyl how i wanted it to. I had some really big ideas with the website, for example that the butterfly flies into the screen and then it automatically scrolls or something.. idk what i was thinking because i was already struggling with making the butterfly flutter. so anways, i finished my wireframe and got to coding. which was hard becuase i kinda forgot most of it but thank to like a thousand tutorials and reddit posts i somehow made what i could. I also tried to make it work with mobile mode but omg its so hard and i honestly dont have time for this so i tried my best. 
-I dont wanna glaze myself but i think my idea was pretty cool, (the idea, not what i made) and i even got a bit emotional making it because it means so much to me (you should definetly check it out if you dont know it yet :) (Life is strange) But i hope i dont have to do this again anytime soon
+## 🛠️ Die einzelnen Sektionen
 
-Github thing: This was so confusing, at some point i accidentally made another document that i worked in for some time and didnt even realize until i tried to comit something and it didnt work. honestly i have no idea if it worked or not. The first comits are probably full of bullshit because i was trying thing out so just ignore them. I hope this all is good enough and i hope it made it somehow work.
+### 1. Hero Section
+Der Schmetterling passt natürlich perfekt zum Namen des ganzen Themas, ist aber auch ein wichtiger Teil des Spiels. Er taucht ganz am Anfang auf, kurz vor einer der größeren Entscheidungen. Außerdem fand ich, dass er einfach cool aussieht. 
+
+Ich habe dem Schmetterling auch eine kleine Animation verpasst, weil ich nicht wollte, dass er so starr wirkt. Das war echt hart, weil ich anfangs absolut keine Ahnung hatte, wie ich das anstellen soll, also habe ich mir (wie für alles andere auch) einfach ein paar Tutorials angeschaut. Zuerst sah es aus wie ein Dämon, der wild herumspringt, aber nach genug Herumprobieren hat es am Ende glücklicherweise funktioniert.
+
+### 2. Arcadia Bay
+Die Story spielt in Arcadia Bay, also wollte ich das auch zeigen. Das Design des Outline-Overlays ist genau wie im Spiel. Ich fand den Look mega cool und wollte ihn unbedingt einbauen. 
+
+* **Photoshop:** Ich habe das Schild in Adobe Photoshop nachgezeichnet und als Overlay hinzugefügt.
+* **Interaktion:** Es wird jetzt nur sichtbar, wenn man mit der Maus darüberhovert. Wenn man daraufklickt, erscheint am unteren Bildschirmrand dieser kurze Text, der dann langsam wieder ausblendet.
+
+### 3. Gallery
+Polaroids spielen im Spiel eine große Rolle, weil die Hauptfigur es liebt, Fotos zu machen, und alles Wichtige festhält. Deshalb dachte ich, das wäre die perfekte Ergänzung für die Galerie. 
+
+Ich habe auch ein paar Videos hinzugefügt, die zeigen, wie die Bilder aufgenommen wurden. Bei dem Polaroid in der Mitte habe ich außerdem ein weiteres Overlay eingebaut, damit die Leute merken, dass man die Polaroids anklicken kann.
+
+### 4. Choice Screen
+Wie schon gesagt – Entscheidungen sind ein extrem wichtiger Teil des Ganzen. Also wollte ich unbedingt eine einbauen, wusste aber nicht, welche Option passen würde, ohne dass man die Story kennen muss. Ich schätze, es ist jetzt vielleicht ein bisschen verwirrend, aber ehrlich gesagt ist mir das egal. 
+
+Mein ursprünglicher Plan war, dass sich die komplette „Stimmung“ der Website ändert, wenn man eine Option anklickt. Aber das hätte viel zu viel Zeit und Mühe gekostet, und beides habe ich gerade nicht. Ich wollte es auch eigentlich noch optisch anpassen, weil es im Moment „zu modern“ aussieht, aber egal.
+
+### 5. Contact & Navigation
+* **Contact:** Der Hintergrund stammt von den Social-Media-Kanälen des Spiels. Ich habe einfach das Kontaktformular darübergelegt und zusätzlich eine mobile Version des Bildes erstellt.
+* **Navigation:** Ich wollte die Navigation sehr simpel halten und bin echt zufrieden damit, wie sie geworden ist – besonders die Idee mit die Spirale, die sich schnell dreht, ist super süß.
+* **Font:** Die Schriftarten, die ich verwendet habe, sind tatsächlich die echten Fonts aus dem Spiel. Ich wollte sie unbedingt für die richtige native Stimmung einbauen und weil sie einfach nice aussehen.
+
+---
+
+## Persönliche Reflexion
+
+Ehrlich gesagt hatte ich am Anfang, als wir das Projekt bekommen haben, absolut keine Ahnung, was ich machen soll. Ich wusste nur, dass ich nichts Langweiliges und Emotionsloses bauen will. Also habe ich über verschiedene Ideen nachgedacht, kam schließlich auf das Spiel und dachte mir: *Warum nicht etwas davon Inspiriertes machen?* Dann habe ich angefangen, mein Wireframe zu erstellen, das am Ende auch fast genau so aussah, wie ich es mir vorgestellt hatte. Ich hatte anfangs echt riesige Ideen für die Website – zum Beispiel, dass der Schmetterling in den Bildschirm hineinfliegt und die Seite dann automatisch nach unten scrollt... ich weiß auch nicht, was ich mir dabei gedacht habe, wenn ich schon damit überfordert war, den Schmetterling überhaupt zum Flattern zu bringen. Wie dem auch sei, nachdem das Wireframe fertig war, ging es ans Coden. 
+
+Das war verdammt hart, weil ich irgendwie fast alles wieder vergessen hatte. Aber dank gefühlt tausend Tutorials und Reddit-Posts habe ich am Ende irgendwie das Beste daraus gemacht. Ich habe auch versucht, die Seite für den Mobile-Modus fit zu machen, aber oh mein Gott, das ist so schwer und ich habe dafür eigentlich echt keine Zeit, also habe ich einfach mein Bestes gegeben.
+
+Ich will mich selbst nicht zu krass hypen, aber ich finde meine Idee an sich ziemlich cool (also die Idee, nicht zwingend das, was ich am Ende daraus gemacht habe). Ich bin beim Erstellen sogar ein bisschen emotional geworden, weil mir das Spiel einfach so viel bedeutet (du solltest es dir definitiv mal anschauen, falls du es noch nicht kennst :) – *Life is Strange*). Aber ich hoffe trotzdem, dass ich so schnell nichts Ähnliches mehr machen muss.
+
+---
+
+## GitHub & Versionskontrolle
+
+Das mit GitHub war so verwirrend. Irgendwann habe ich aus Versehen ein zweites Dokument erstellt, in dem ich eine ganze Weile gearbeitet habe, ohne es überhaupt zu merken – bis ich versucht habe, etwas zu committen, und es nicht funktioniert hat. Ehrlich gesagt habe ich keinen Plan, ob es jetzt geklappt hat oder nicht. 
+
+Die ersten Commits sind wahrscheinlich absoluter Bullshit, weil ich da nur Sachen ausprobiert habe, also ignoriert die am besten einfach. Ich hoffe, das alles ist gut genug und dass ich es irgendwie zum Laufen gebracht habe.
