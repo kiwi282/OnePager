@@ -1,3 +1,17 @@
+@font-face {
+    font-family: 'DuduCalligraphy';
+    src: url('fonts/Dudu_Calligraphy.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+font-family: 'Whatnot'; 
+    src: url('fonts/Whatnot W00 Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root {
     --bgPrimary: #000000;
     --bgUiElement: #1a1a1a;
@@ -8,12 +22,16 @@
     --accentBlue: #00aaff;
     --navBg: rgba(0, 0, 0, 0.85);
     --polaroidShadow: 0 0 20px 5px rgba(0, 0, 0, 1);
-    --mainFont: 'Arial', sans-serif;
     --contactFieldBg: rgba(0, 170, 255, 0.25);
     --contactInputText: #333333;
     --vignetteInner: transparent;
     --vignetteMid: rgba(0, 0, 0, 0.5);
     --vignetteOuter: rgba(0, 0, 0, 1);
+    
+
+    --headerFont: 'Whatnot', 'Courier New', monospace;
+    --journalFont: 'DuduCalligraphy', sans-serif;
+    --bodyFont: 'Arial', sans-serif;
 }
 
 body.lightMode {
@@ -47,7 +65,7 @@ html {
 }
 
 body {
-    font-family: var(--mainFont);
+    font-family: var(--bodyFont);
     background-color: var(--bgPrimary);
     color: var(--textPrimary);
     overflow-x: hidden;
@@ -76,8 +94,6 @@ body {
 .contactSection {
     height: 100vh;
     width: 100%;
-    will-change: transform;
-    transform: translateZ(0);
 }
 
 .mainNav {
@@ -136,6 +152,7 @@ body {
 }
 
 .mainNav a {
+    font-family: var(--headerFont);
     color: var(--navText);
     text-decoration: none;
     font-size: 1rem;
@@ -159,6 +176,7 @@ body {
 }
 
 .heroText h1 {
+    font-family: var(--headerFont);
     font-size: 3rem;
     margin-bottom: 5px;
     text-transform: uppercase;
@@ -166,6 +184,7 @@ body {
 }
 
 .heroText p {
+    font-family: var(--journalFont);
     font-size: 1.2rem;
     color: var(--textProtected);
     opacity: 0.85;
@@ -244,6 +263,7 @@ body {
 }
 
 .arcadiaInfo h2 {
+    font-family: var(--headerFont);
     font-size: 3.5rem;
     margin-bottom: 10px;
     text-transform: uppercase;
@@ -251,6 +271,8 @@ body {
 }
 
 .arcadiaInfo p {
+    font-family: var(--journalFont);
+    font-family: var(--journalFont);
     font-size: 1.4rem;
     line-height: 1.2;
     color: var(--textProtected);
@@ -267,6 +289,7 @@ body {
 }
 
 .storyContent p {
+    font-family: var(--journalFont);
     font-size: 1.5rem;
     color: var(--textPrimary);
     margin-bottom: 10px;
@@ -335,6 +358,7 @@ body {
 }
 
 .consequenceAlert {
+    
     position: absolute;
     top: 12%;
     z-index: 10;
@@ -343,6 +367,7 @@ body {
 }
 
 .consequenceAlert p {
+    font-family: var(--journalFont);
     font-size: 1.1rem;
     color: var(--textProtected);
     text-transform: uppercase;
@@ -395,12 +420,13 @@ body {
 }
 
 .choiceLabel {
+    font-family: var(--journalFont);
     position: relative;
     z-index: 3;
     background: none;
     border: none;
     font-size: 2.2rem;
-    color: var(--textProtected);
+    color: var(--journalFontd);
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 1px;
