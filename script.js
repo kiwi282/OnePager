@@ -62,9 +62,10 @@ window.addEventListener('wheel', (e) => {
 
 window.addEventListener('resize', updateCurrentIndex);
 window.addEventListener('load', updateCurrentIndex);
-document.addEventListener('DOMContentLoaded', () => {
-    const choiceSides = document.querySelectorAll('.choiceSide');
 
+document.addEventListener('DOMContentLoaded', () => {
+    
+    const choiceSides = document.querySelectorAll('.choiceSide');
     if (choiceSides.length > 0) {
         choiceSides.forEach(side => {
             side.addEventListener('click', () => {
@@ -76,9 +77,24 @@ document.addEventListener('DOMContentLoaded', () => {
                         s.classList.add('faded');
                     }
                 });
-                
                 console.log("Choice registered. Consequences ahead.");
             });
         });
     }
-});
+
+    const hotspot = document.getElementById('signHotspot');
+    const subtitle = document.getElementById('inspectSubtitle');
+    let subtitleTimeout;
+
+    if (hotspot && subtitle) {
+        hotspot.addEventListener('click', () => {
+            clearTimeout(subtitleTimeout);
+            
+            subtitle.classList.add('open');
+            
+            subtitleTimeout = setTimeout(() => {
+                subtitle.classList.remove('open');
+            }, 4000);
+        });
+    }
+}); 
