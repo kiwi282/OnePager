@@ -60,7 +60,7 @@ window.addEventListener('wheel', (e) => {
 
     setTimeout(() => {
         isMoving = false;
-    }, 800);
+    }, 1200);
 }, { passive: false });
 
 window.addEventListener('resize', updateCurrentIndex);

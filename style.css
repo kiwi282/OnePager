@@ -1,4 +1,4 @@
-/* Variablen für Farben und custom Fonts*/
+/* Variablen für Farben und custom Fonts */
 
 @font-face {
     font-family: 'DuduCalligraphy';
@@ -221,8 +221,8 @@ body {
 
 .butterflyBox {
     position: absolute;
-    top: 37%;
-    left: 33.5%;
+    top: 32%;
+    left: 29.7%;
     z-index: 10;
     cursor: pointer;
 }
@@ -234,7 +234,7 @@ body {
     animation: butterflyPauseLoop 4s infinite ease-in-out;
 }
 
-/* Keyframes für das "Flattern" des Schmetterlings*/
+/* Keyframes für das "Flattern" des Schmetterlings */
 @keyframes butterflyPauseLoop {
     0%, 12%, 24%, 36%, 100% {
         transform: rotate(53deg) scaleY(1) skewX(0deg) rotate(-53deg);
@@ -265,7 +265,7 @@ body {
     z-index: 1;
 }
 
-/* Overlay Outline von dem Schild*/
+/* Overlay Outline von dem Schild */
 .fullScreenOutline {
     opacity: 0;
     z-index: 2;
@@ -368,7 +368,8 @@ body {
     object-fit: cover;
     display: block;
 }
-/* Nochmals ein Overlay Outline*/
+
+/* Nochmals ein Overlay Outline */
 .p2Outline {
     position: absolute;
     top: 0;
@@ -707,7 +708,7 @@ body.lightMode .polaroid {
     opacity: 1;
 }
 
-/* Anpassung für Mobile*/ 
+/* Anpassung für Mobile */ 
 @media (max-width: 768px) {
     .storySection, .gallerySection, .contactSection {
         height: auto;
@@ -715,20 +716,20 @@ body.lightMode .polaroid {
         padding: 80px 20px;
     }
 
-    .heroSection, .arcadiaSection {
+    .heroSection {
         height: 100vh;
         width: 100%;
         position: relative;
         padding: 0;
         overflow: hidden;
-    }
-
-    .heroSection {
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        padding-top: 12vh;
-        padding-left: 6%;
+        justify-content: flex-start; 
+        align-items: center;    
+        padding-top: 15vh;        
+        padding-left: 20px;
+        padding-right: 20px;
+        text-align: center;    
     }
 
     .heroImageContainer {
@@ -736,26 +737,28 @@ body.lightMode .polaroid {
         transform: translate(-68%, -50%);
     }
 
+    .heroText {
+        position: relative;
+        z-index: 2;
+        max-width: 85% !important; 
+        margin: 0 auto;
+    }
+
     .heroText h1 {
-        font-family: var(--headerFont);
-        font-size: 2.2rem;
-        margin-bottom: 5px;
-        text-transform: uppercase;
-        color: var(--textProtected);
-        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+        font-size: 2.5rem;    
+        margin-bottom: 15px;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.85);
     }
 
     .heroText p {
-        font-family: var(--journalFont);
-        font-size: 1.2rem;
-        color: var(--textProtected);
-        opacity: 0.9;
-        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+        font-size: 1.1rem;
+        line-height: 1.5;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
     }
 
     .butterflyBox {
-        top: 45%;
-        left: 50%;
+        top: 42%;
+        left: 43%;
         transform: scale(0.9);
         transform-origin: top left;
     }
@@ -765,19 +768,44 @@ body.lightMode .polaroid {
         object-position: 83% center;
     }
 
+    .arcadiaSection {
+        height: 100vh;
+        width: 100%;
+        position: relative;
+        padding: 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; 
+        align-items: center;
+    }
+
     .arcadiaInfo {
         position: absolute;
-        top: 8vh;
+        top: 10vh;
         left: 50%;
         transform: translateX(-50%);
-        padding-left: 0;
         text-align: center;
-        width: 90%;
+        width: 85% !important; 
+        max-width: none !important;
+        padding-left: 0;
         z-index: 4;
     }
 
-    .arcadiaInfo h2 { font-size: 2.4rem; }
-    .arcadiaInfo p { font-size: 1.2rem; }
+    .arcadiaInfo h2 { 
+        font-size: 2.4rem;
+        text-transform: uppercase;
+        color: var(--textProtected);
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.85);
+    }
+
+    .arcadiaInfo p { 
+        font-size: 1.1rem; 
+        line-height: 1.5;
+        color: var(--textProtected);
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
+    }
 
     .signHotspot {
         position: absolute;
@@ -857,6 +885,22 @@ body.lightMode .polaroid {
         transform: translate(-50%, -50%) scale(1.05) !important;
     }
 
+    .choiceWrapper:hover .choiceSide {
+        filter: none !important;
+    }
+
+    .choiceWrapper:hover .stayDream:not(:hover) {
+        width: 100% !important;
+    }
+
+    .stayDream:hover,
+    .wakeUp:hover,
+    .choiceSide:hover .choiceBg {
+        width: 100% !important;
+        filter: brightness(0.6) grayscale(10%) !important;
+        transform: none !important;
+    }
+
     .consequenceAlert { top: 3%; }
 
     .contactSection {
@@ -907,5 +951,37 @@ body.lightMode .polaroid {
         width: 15%;
         height: 4%;
         opacity: 0;
+    }
+    .mainNav {
+        top: 15px;
+        left: 15px;
+        width: calc(100% - 350px);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .mainNav ul {
+        flex-direction: column;
+        width: 100%;
+        align-items: flex-start;
+        padding: 15px 20px;
+        border-radius: 15px;
+        transform: translateY(-10px);
+    }
+
+    .mainNav.open ul {
+        transform: translateY(0);
+    }
+
+    .mainNav li {
+        width: 100%;
+        padding: 5px 0;
+    }
+
+    .mainNav a {
+        display: block;
+        width: 100%;
+        font-size: 1.1rem;
     }
 }
