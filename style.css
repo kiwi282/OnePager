@@ -180,8 +180,19 @@ body {
 }
 
 .butterflyImg {
-    width: 400px;
+    width: 420px;
     height: auto;
+    transform-origin: center;
+    animation: butterflyPauseLoop 4s infinite ease-in-out;
+}
+
+@keyframes butterflyPauseLoop {
+    0%, 12%, 24%, 36%, 100% {
+        transform: rotate(53deg) scaleY(1) skewX(0deg) rotate(-53deg);
+    }
+    6%, 18%, 30% {
+        transform: rotate(45deg) scaleY(0.25) skewX(10deg) rotate(-53deg);
+    }
 }
 
 .arcadiaSection {
@@ -285,7 +296,6 @@ body {
     height: auto;
     transition: transform 0.3s ease, box-shadow 0.4s ease;
     box-shadow: var(--polaroidShadow);
-    animation: photoFloat 6s ease-in-out infinite alternate;
 }
 
 .p5 { top: -50px; left: -40px; transform: rotate(-2deg); width: 220px; animation-delay: 0.5s; z-index: 2; }
