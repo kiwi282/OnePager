@@ -333,8 +333,8 @@ body {
 
 .galleryContainer {
     position: relative;
-    width: 600px;
-    height: 600px;
+    width: 1000px;
+    height: 450px;
 }
 
 .polaroid {
@@ -345,12 +345,18 @@ body {
     box-shadow: var(--polaroidShadow);
 }
 
-.p5 { top: -50px; left: -40px; transform: rotate(-2deg); width: 220px; animation-delay: 0.5s; z-index: 2; }
-.p4 { top: -90px; right: -188px; transform: rotate(3deg); width: 340px; animation-delay: 1s; z-index: 3; }
-.p2 { top: 50px; left: 50%; transform: translateX(-50%) rotate(-2deg); width: 380px; animation-delay: 0s; z-index: 5; }
-.p1 { bottom: 20px; left: -140px; transform: rotate(3deg); width: 320px; animation-delay: 1.5s; z-index: 6; }
-.p3 { bottom: -10px; right: -150px; transform: rotate(1deg); width: 350px; animation-delay: 2s; z-index: 4; }
-.p6 { bottom: -150px; left: 20px; transform: rotate(-3deg); width: 220px; animation-delay: 2.5s; z-index: 1; }
+.p1 { top: 40px; left: -80px; transform: rotate(-6deg); width: 280px; z-index: 4; }
+.p5 { top: -20px; left: 140px; transform: rotate(4deg); width: 230px; z-index: 1; }
+.p2 { top: 50px; left: 320px; transform: rotate(-3deg); width: 310px; z-index: 5; }
+.p6 { 
+    top: 200px; 
+    left: 500px; 
+    transform: rotate(5deg); 
+    width: 230px; 
+    z-index: 3; 
+}
+.p4 { top: -10px; right: 100px; transform: rotate(-4deg); width: 300px; z-index: 3; }
+.p3 { top: 80px; right: -100px; transform: rotate(7deg); width: 290px; z-index: 4; }
 
 .polaroid:hover {
     z-index: 100;
@@ -361,7 +367,7 @@ body {
 }
 
 .p2:hover {
-    transform: translateX(-50%) scale(1.1) rotate(0deg) !important;
+    transform: scale(1.1) rotate(0deg) !important;
 }
 
 @keyframes photoFloat {
